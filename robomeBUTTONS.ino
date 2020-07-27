@@ -5,10 +5,6 @@
   const int PWML = 40;
   const int PWMR = 39;
   
-  const int TLED1 = 38;
-  const int TLED2 = 37;
-  const int TLED3 = 36;
-  const int TLED4 = 35;
   const int BPUSH1 = 34;
   const int BPUSH2 = 19;
   const int BPUSH3 = 18;
@@ -17,15 +13,7 @@
   int rangeL;
   int rangeR;
 
-  const int LineIR = 61;
-  const int Line1 = 65;
-  const int Line2 = 48;
-  const int Line3 = 64;
-  const int Line4 = 47;
-  const int Line5 = 52;
-  const int Line6 = 68;
-  const int Line7 = 53;
-  const int Line8 = 69;
+  const int RLED = 77; 
 
 void setup() {
   // put your setup code here, to run once:
@@ -36,24 +24,10 @@ pinMode(DIR_R, OUTPUT);
 pinMode(PWML, OUTPUT);
 pinMode(PWMR, OUTPUT);
 
-pinMode (TLED1, OUTPUT);
-pinMode (TLED2, OUTPUT);
-pinMode (TLED3, OUTPUT);
-pinMode (TLED4, OUTPUT);
 pinMode (BPUSH1, INPUT);
 pinMode (BPUSH2, INPUT);
 pinMode (BPUSH3, INPUT);
 pinMode (BPUSH4, INPUT);
-
-pinMode (LineIR, OUTPUT);
-pinMode (Line1, OUTPUT);
-pinMode (Line2, OUTPUT);
-pinMode (Line3, OUTPUT);
-pinMode (Line4, OUTPUT);
-pinMode (Line5, OUTPUT);
-pinMode (Line6, OUTPUT);
-pinMode (Line7, OUTPUT);
-pinMode (Line8, OUTPUT);
 
 //analogWrite(PWML, 0);
 //analogWrite(PWMR, 0);
@@ -61,10 +35,8 @@ pinMode (Line8, OUTPUT);
 digitalWrite(nSLPL, LOW);
 digitalWrite(nSLPR, LOW);
 
-digitalWrite(TLED1, LOW);
-digitalWrite(TLED2, LOW);
-digitalWrite(TLED3, LOW);
-digitalWrite(TLED4, LOW);
+//digitalWrite(DIR_R, LOW);
+//digitalWrite(DIR_R, LOW);  
 
 }
 
@@ -73,44 +45,29 @@ void loop() {
 
   if (digitalRead(BPUSH1) == HIGH)
   {
-    digitalWrite(TLED1, HIGH);
+    digitalWrite(RLED, HIGH);
   }
   else
   {
-    digitalWrite(TLED1, LOW);
+    digitalWrite(RLED, LOW);
   }
   if (digitalRead(BPUSH2) == HIGH)
   {
-    digitalWrite(TLED2, HIGH);
     forward();
     speedLeft(25);
     speedRight(25);
   }
-  else
-  {
-    digitalWrite(TLED2, LOW);
-  }
   if (digitalRead(BPUSH3) == HIGH)
   {
-    digitalWrite(TLED3, HIGH);
     backward();
     speedLeft(25);
     speedRight(25);
   }
-  else
-  {
-    digitalWrite(TLED3, LOW);
-  }
   if (digitalRead(BPUSH4) == HIGH)
   {
-    digitalWrite(TLED4, HIGH);
     right();
     speedLeft(15);
     speedRight(0);
-  }
-  else
-  {
-    digitalWrite(TLED4, LOW);
   }
   if ((digitalRead(BPUSH1) == LOW) && (digitalRead(BPUSH2) == LOW) && (digitalRead(BPUSH3) == LOW) && (digitalRead(BPUSH4) == LOW))
   {
