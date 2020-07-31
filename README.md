@@ -13,7 +13,7 @@ roboMeButtons contains code for manual control of the robot.
 
 This project involves a 4 button RF remote and receiver, as well as the TI RSLK Max Robot and a buzzer.
 BUTTONSANDLINE is the code that programs the robot to follow a line when A is pressed on the remote. 
-The other buttons are for manual control: B makes the robot turn towards the right, C moves the robot forward, and D moves it backwards.
+The other buttons are for manual control: B makes the robot turn towards the right, C moves the robot forward, and D moves it backward.
 The buzzer sounds when an object is detected by the bump sensors!
 
 
